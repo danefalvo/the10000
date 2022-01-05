@@ -33,12 +33,13 @@ step "Git - Push (HTTPS)" {
 
     action {
         properties = {
-            GitHttpsBranchName = "master"
+            GitHttpsBranchName = "main"
             GitHttpsPackageStepName = "Deploy a Package"
             GitHttpsUrl = "https://github.com/danefalvo/the10000"
             Octopus.Action.RunOnServer = "false"
             Octopus.Action.Template.Id = "ActionTemplates-941"
             Octopus.Action.Template.Version = "2"
+            Password = "#{GitPass}"
             Username = "danefalvo@gmail.com"
         }
         worker_pool_variable = ""
