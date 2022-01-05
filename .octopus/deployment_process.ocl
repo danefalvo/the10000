@@ -25,3 +25,22 @@ step "Deploy a Package" {
         }
     }
 }
+
+step "Git - Push (HTTPS)" {
+    properties = {
+        Octopus.Action.TargetRoles = "Role1"
+    }
+
+    action {
+        properties = {
+            GitHttpsBranchName = "master"
+            GitHttpsPackageStepName = "Deploy a Package"
+            GitHttpsUrl = "https://github.com/danefalvo/the10000"
+            Octopus.Action.RunOnServer = "false"
+            Octopus.Action.Template.Id = "ActionTemplates-941"
+            Octopus.Action.Template.Version = "2"
+            Username = "danefalvo@gmail.com"
+        }
+        worker_pool_variable = ""
+    }
+}
